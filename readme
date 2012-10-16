@@ -1,0 +1,93 @@
+Para la compilacion en windows instalen cygwin con:
+clisp,sbcl,gcc,g++,ruby,python,emacs,swi-prolog.
+
+En linux y mac cada uno de estos tiene sus respectivos paquetes:
+
+lisp = clisp, sbcl y opcional = slime, clozure
+ruby = irb, ruby
+C = gcc
+C++ = g++
+emacs = emacs y opcional = (emacs-goodies)
+python = cpython, tambien lo pueden descargar desde "http://www.python.org/download/"
+prolog = swi-prolog
+haskell = ghc para windows es mejor hugs
+
+Lisp
+
+--------------------------------------------------
+(defun hello () 
+(write-string "Hello World!!"))
+--------------------------------------------------
+
+Opcion 1) clisp
+Opcion 2) sbcl
+          (compile-file "hello.lisp")
+          (load "hello.fasl")
+
+Ruby
+
+--------------------------------------------------
+#!/usr/bin/ruby
+puts "Hola Mundo"
+--------------------------------------------------
+
+Opcion 1) irb
+Opcion 2) ruby hello.rb
+
+C++
+
+--------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  cout << "Hello World" << endl;
+  return 0;
+}
+--------------------------------------------------
+
+Opcion 1) g++ hello.cpp && ./a.out
+
+C
+
+--------------------------------------------------
+#include <stdio.h>
+
+int main(){
+  printf("Hello World\n");
+  return 0;
+}
+--------------------------------------------------
+
+Opcion 1) gcc hello.c && ./a.out
+
+Python 
+
+--------------------------------------------------
+print "Hello World"
+--------------------------------------------------
+
+Opcion 1) python hello.py
+
+Prolog
+
+--------------------------------------------------
+#!/usr/bin/swipl -q -t hello_world -f
+
+hello :- write('Hello World'), nl, 
+               halt.
+--------------------------------------------------
+
+Opcion 1) swipl
+       	  [hello].
+	  hello.
+
+Haskell
+
+--------------------------------------------------
+main = putStrLn "Hola, mundo!"
+--------------------------------------------------
+
+Opcion 1) ghci
+Opcion 2) ghc -o hello hello.hs
